@@ -2,26 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media print {
+  .no-print { display: none !important; }
+  .print-break { page-break-before: always; }
+  body { background: white; }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Animación de flujo SVG */
+@keyframes flowRight {
+  from { transform: translateX(-20px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  to { transform: translateX(20px); opacity: 0; }
+}
+@keyframes drip {
+  0% { transform: translateY(0); opacity: 1; r: 2; }
+  100% { transform: translateY(18px); opacity: 0; r: 1; }
+}
+.animate-flow { animation: flowRight var(--flow-dur, 2s) linear infinite; }
+.animate-drip { animation: drip var(--drip-dur, 1.5s) ease-in infinite; }
+
+/* Slider estilizado */
+input[type=range] {
+  @apply h-1.5 rounded-full appearance-none bg-slate-200 cursor-pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  @apply appearance-none h-4 w-4 rounded-full bg-blue-600 border-2 border-white shadow;
 }
