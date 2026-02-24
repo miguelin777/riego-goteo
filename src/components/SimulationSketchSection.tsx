@@ -5,7 +5,7 @@ import type { SystemParams } from '@/lib/types';
 export default function SimulationSketchSection({ params: p }: { params: SystemParams }) {
   return (
     <div className="space-y-4 text-sm">
-      <h2 className="text-base font-bold text-slate-800">Bosquejo de Diseño del Simulador</h2>
+      <h2 className="text-sm sm:text-base font-bold text-slate-800">Bosquejo de Diseño del Simulador</h2>
 
       <Block color="amber" title="1. Variables de entrada">
         <ul className="list-disc ml-5 text-xs text-slate-700 space-y-0.5">

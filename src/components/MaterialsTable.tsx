@@ -5,9 +5,9 @@ import type { MaterialItem } from '@/lib/types';
 export default function MaterialsTable({ materials }: { materials: MaterialItem[] }) {
   return (
     <div className="space-y-3 text-sm">
-      <h2 className="text-base font-bold text-slate-800">Lista de Materiales</h2>
-      <div className="overflow-x-auto">
-        <table className="w-full text-xs border-collapse">
+      <h2 className="text-sm sm:text-base font-bold text-slate-800">Lista de Materiales</h2>
+      <div className="overflow-x-auto -mx-2 px-2">
+        <table className="w-full text-xs border-collapse min-w-[500px]">
           <thead>
             <tr className="bg-blue-50 text-blue-800">
               <th className="text-left py-2 px-3 rounded-tl-lg">#</th>

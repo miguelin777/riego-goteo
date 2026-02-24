@@ -34,8 +34,8 @@ export default function FlowSimulationView({ params: p, results: r }: Props) {
 
   return (
     <div className="space-y-5 text-sm">
-      <div className="flex items-center justify-between">
-        <h2 className="text-base font-bold text-slate-800">Simulación de Flujo</h2>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <h2 className="text-sm sm:text-base font-bold text-slate-800">Simulación de Flujo</h2>
         <div className="flex items-center gap-3 no-print">
           <button onClick={() => setPlaying(!playing)}
             className="rounded-md bg-blue-600 text-white px-3 py-1 text-xs font-semibold
@@ -43,10 +43,10 @@ export default function FlowSimulationView({ params: p, results: r }: Props) {
             {playing ? 'Pausar' : 'Reproducir'}
           </button>
           <label className="flex items-center gap-1.5 text-xs text-slate-500">
-            Velocidad
+            <span className="hidden xs:inline">Velocidad</span>
             <input type="range" min={0.2} max={5} step={0.1} value={speed}
               onChange={e => setSpeed(parseFloat(e.target.value))}
-              className="w-20" />
+              className="w-16 sm:w-20" />
             <span className="font-mono text-blue-700 w-6">{speed.toFixed(1)}×</span>
           </label>
         </div>

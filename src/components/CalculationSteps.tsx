@@ -14,7 +14,7 @@ function F({ title, children }: { title: string; children: React.ReactNode }) {
 }
 
 function Eq({ children }: { children: React.ReactNode }) {
-  return <p className="font-mono text-[11px] bg-white rounded px-2 py-1 border border-blue-200 my-1 overflow-x-auto">{children}</p>;
+  return <p className="font-mono text-[10px] sm:text-[11px] bg-white rounded px-2 py-1 border border-blue-200 my-1 overflow-x-auto whitespace-nowrap">{children}</p>;
 }
 
 export default function CalculationSteps({ params: p, results: r }: Props) {
@@ -23,7 +23,7 @@ export default function CalculationSteps({ params: p, results: r }: Props) {
 
   return (
     <div className="space-y-4 text-sm">
-      <h2 className="text-base font-bold text-slate-800">Pasos de Cálculo Hidráulico</h2>
+      <h2 className="text-sm sm:text-base font-bold text-slate-800">Pasos de Cálculo Hidráulico</h2>
 
       {/* 1. Demanda */}
       <F title="1. Demanda de agua del cultivo">

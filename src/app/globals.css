@@ -36,3 +36,7 @@ input[type=range] {
 input[type=range]::-webkit-slider-thumb {
   @apply appearance-none h-4 w-4 rounded-full bg-blue-600 border-2 border-white shadow;
 }
+
+/* Ocultar scrollbar en navegación de tabs */
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }

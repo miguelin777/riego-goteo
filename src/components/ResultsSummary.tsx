@@ -33,10 +33,10 @@ export default function ResultsSummary({ params: p, results: r }: Props) {
 
   return (
     <div className="space-y-4 text-sm">
-      <h2 className="text-base font-bold text-slate-800">Resumen de Resultados</h2>
+      <h2 className="text-sm sm:text-base font-bold text-slate-800">Resumen de Resultados</h2>
 
-      <div className="bg-white rounded-lg border border-slate-200 overflow-hidden">
-        <table className="w-full">
+      <div className="bg-white rounded-lg border border-slate-200 overflow-x-auto -mx-2 px-2 sm:mx-0 sm:px-0">
+        <table className="w-full min-w-[400px]">
           <tbody>
             <SectionTitle>Demanda hídrica</SectionTitle>
             <Row label="Área de cultivo" value={fmt(r.area, 2)} unit="m²" />
