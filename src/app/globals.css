@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  .print-break { page-break-before: always; }
+  body { background: white; }
+}
+
+/* Animación de flujo SVG */
+@keyframes flowRight {
+  from { transform: translateX(-20px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  to { transform: translateX(20px); opacity: 0; }
+}
+@keyframes drip {
+  0% { transform: translateY(0); opacity: 1; r: 2; }
+  100% { transform: translateY(18px); opacity: 0; r: 1; }
+}
+.animate-flow { animation: flowRight var(--flow-dur, 2s) linear infinite; }
+.animate-drip { animation: drip var(--drip-dur, 1.5s) ease-in infinite; }
+
+/* Slider estilizado */
+input[type=range] {
+  @apply h-1.5 rounded-full appearance-none bg-slate-200 cursor-pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  @apply appearance-none h-4 w-4 rounded-full bg-blue-600 border-2 border-white shadow;
+}
+
+/* Ocultar scrollbar en navegación de tabs */
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
